@@ -1,0 +1,167 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  &-bio {
+    background-color: var(--main-bg-bio);
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    &-name {
+      margin: 10px;
+      font-size: 20px;
+      color: white;
+    }
+    &-title {
+      font-size: 20px;
+      color: white;
+    }
+    &-photo {
+      border-radius: 100%;
+      width: 150px;
+      border: solid 2px white;
+    }
+    &-network {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      &-logo {
+        width: 30px;
+        height: 30px;
+        margin: 0 30px;
+      }
+      &-logo:hover {
+        fill: yellow;
+        cursor: pointer;
+      }
+    }
+  }
+  &-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px 200px;
+    &-experiences {
+      box-shadow: 0px 0px 3px #555;
+      border-radius: 2px;
+      padding: 20px;
+      background-color: #fafafa;
+      display: flex;
+      flex-direction: column;
+      min-width: 375px;
+      &-title {
+        font-weight: bold;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+      &-experience {
+        display: flex;
+        font-size: 14px;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: solid 1px rgb(199, 199, 199);
+        &-logo {
+          width: 50px;
+          height: 50px;
+          margin-right: 40px;
+        }
+        &-data {
+          flex: 5;
+          color: rgb(54, 54, 54);
+          &-job {
+            font-weight: bold;
+          }
+          &-entreprise {
+          }
+          &-date {
+          }
+          &-actions {
+            margin-top: 10px;
+          }
+        }
+        &-skills {
+          flex: 3;
+          margin-left: 40px;
+          padding: 0 20px;
+          border-left: solid 1px rgb(199, 199, 199);
+          color: rgb(54, 54, 54);
+          display: flex;
+          flex-direction: column;
+          &-title {
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+          }
+          &-skill {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-left: 20px;
+            &-photo {
+              width: 30px;
+              height: 30px;
+              margin: 10px 20px 10px 0px;
+              &-anritsu {
+                width: 60px;
+                height: 60px;
+                margin: 10px 40px 10px 0px;
+              }
+            }
+
+          }
+        }
+      }
+      &-experience:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+    }
+    &-formations {
+      margin-top: 30px;
+      box-shadow: 0px 0px 3px #555;
+      border-radius: 2px;
+      padding: 20px;
+      background-color: #fafafa;
+      display: flex;
+      flex-direction: column;
+      min-width: 375px;
+    }
+    &-competences {
+      display: flex;
+      flex-direction: column;
+      border-top: solid 1px rgb(177, 177, 177);
+      margin-top: 30px;
+      align-items: center;
+      justify-content: center;
+
+      &-title {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        height: fit-content;
+        background-color: var(--second-card-skills);
+        border-radius: 10px;
+        padding: 5px;
+        box-shadow: 0px 0px 3px rgb(23, 23, 23);
+        color: white;
+        width: 300px;
+      }
+      &-skills {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+    }
+  }
+}
