@@ -8,7 +8,8 @@ import { HomeComponent } from './pages/home/home.component';
   imports: [
     CommonModule,
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponent }
+      { path: 'home', component: HomeComponent },
+      { path: '**', redirectTo: 'home' }
     ])
   ],
   exports: [RouterModule]
