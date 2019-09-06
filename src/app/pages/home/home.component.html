@@ -10,7 +10,8 @@
             <a href="https://www.linkedin.com/in/pierre-damien-denis-109ab2121/" target="_blank"><img
                     class="main-bio-network-logo" src="./../../../assets/img/linkedin.svg">
             </a>
-            <a href="mailto:denis.pierredamien@gmail.com"><img class="main-bio-network-logo" src="./../../../assets/img/mail.svg">
+            <a href="mailto:denis.pierredamien@gmail.com"><img class="main-bio-network-logo"
+                    src="./../../../assets/img/mail.svg">
             </a>
         </div>
     </div>
@@ -47,8 +48,12 @@
                             src="./../../../assets/img/logo_javascript.png">
                     </div>
                     <div class="main-content-experiences-experience-skills-skill">
-                        <img matTooltip="Github" class="main-content-experiences-experience-skills-skill-photo"
+                        <img *ngIf="!dark" matTooltip="Github"
+                            class="main-content-experiences-experience-skills-skill-photo"
                             src="./../../../assets/img/github-logo.svg">
+                        <img *ngIf="dark" matTooltip="Github"
+                            class="main-content-experiences-experience-skills-skill-photo"
+                            src="./../../../assets/img/github.svg">
                         <img matTooltip="GitLab" class="main-content-experiences-experience-skills-skill-photo"
                             src="./../../../assets/img/GitLab_Logo.svg">
                         <img matTooltip="Mantis" class="main-content-experiences-experience-skills-skill-photo"
@@ -211,8 +216,12 @@
                             src="./../../../assets/img/KNXpng_logo.png">
                     </div>
                     <div class="main-content-experiences-experience-skills-skill">
-                        <img matTooltip="Github" class="main-content-experiences-experience-skills-skill-photo"
+                        <img *ngIf="!dark" matTooltip="Github"
+                            class="main-content-experiences-experience-skills-skill-photo"
                             src="./../../../assets/img/github-logo.svg">
+                        <img *ngIf="dark" matTooltip="Github"
+                            class="main-content-experiences-experience-skills-skill-photo"
+                            src="./../../../assets/img/github.svg">
                     </div>
                 </div>
             </div>
@@ -258,7 +267,10 @@
                 <app-card-skill url="./../../../assets/img/java.svg" description="Java"></app-card-skill>
                 <app-card-skill url="./../../../assets/img/nodejs.svg" description="NodeJs"></app-card-skill>
                 <app-card-skill url="./../../../assets/img/android.svg" description="Android"></app-card-skill>
-                <app-card-skill url="./../../../assets/img/github-logo.svg" description="GitHub"></app-card-skill>
+                <app-card-skill *ngIf="dark===false" url="./../../../assets/img/github-logo.svg" description="GitHub">
+                </app-card-skill>
+                <app-card-skill *ngIf="dark===true" url="./../../../assets/img/github.svg" description="GitHub">
+                </app-card-skill>
             </div>
 
         </div>
