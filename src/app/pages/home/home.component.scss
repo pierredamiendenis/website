@@ -39,6 +39,25 @@
         cursor: pointer;
       }
     }
+    &-search {
+      color: white;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: rgb(169, 73, 73);
+      padding: 10px;
+      border-radius: 10px;
+      border: solid 1px rgb(160, 49, 49);
+      &-title {
+        font-size: 24px;
+      }
+      &-content {
+        font-size: 18px;
+      }
+
+    }
   }
   &-content {
     display: flex;
@@ -155,10 +174,20 @@
       }
       &-skills {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
+        &-title {
+          color: var(--title);
+          border-bottom: solid 1px rgb(177, 177, 177);
+        }
+        &-data {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+
+        }
       }
 
     }
