@@ -9,7 +9,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
+import { ParticlesModule } from 'angular-particle';
 
+import {MatStepperModule} from '@angular/material/stepper';
+
+import {StepsModule} from 'primeng/steps';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {MenuItem} from 'primeng/api';                  //api
 
 import {
   MatIconModule,
@@ -32,8 +38,11 @@ import { CardSkillComponent } from './components/card-skill/card-skill.component
     MatIconModule,
     BrowserAnimationsModule,
     MatTooltipModule,
-    MatSlideToggleModule
-  ],
+    MatSlideToggleModule,
+    ParticlesModule,
+    MatStepperModule,
+    StepsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

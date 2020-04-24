@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
     skills: [this.Shockline, this.Spectrum, this.VNA]
   }
 
-  experiences = [this.Niji, this.SmartViser, this.Anritsu_1]
+  experiences = [this.Anritsu_1, this.SmartViser, this.Niji]
 
 
 
@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit {
     date: "2015 - 2017",
     place: "Rennes",
     works: ["TIPE : Optimisation de la géolocalisation d'un pilote de drone"],
-    skills: [this.Scala,this.Java]
+    skills: [this.Scala, this.Java]
   }
 
   // IOT = {
@@ -114,24 +114,45 @@ export class HomeComponent implements OnInit {
       "• Protocole de routage : MPLS, RIP, OSPF et BGP",
       "• IPv6, SDN (MININET)"
     ],
-    skills: [this.Shockline, this.Spectrum, this.VNA,this.LTE,this.GSM,this.Ansys,this.Python,this.MATLAB,this.Cisco,this.Wireshark]
+    skills: [this.Shockline, this.Spectrum, this.VNA, this.LTE, this.GSM, this.Ansys, this.Python, this.MATLAB, this.Cisco, this.Wireshark]
   }
 
-  formations = [this.TR,this.Prepa,]
+  formations = [this.Prepa, this.TR]
 
 
-  telecom = {name:"Télécommunications",data:[this.Shockline, this.Spectrum, this.VNA,this.LTE,this.GSM,this.Ansys,this.Python,this.MATLAB]};
-  network = {name:"Réseaux",data:[this.Wireshark,this.Python,this.Cisco]};
+  telecom = { name: "Télécommunications", data: [this.Shockline, this.Spectrum, this.VNA, this.LTE, this.GSM, this.Ansys, this.Python, this.MATLAB] };
+  network = { name: "Réseaux", data: [this.Wireshark, this.Python, this.Cisco] };
   // informatique = {name:"Informatique",data:[this.Angular,this.HTML,this.CSS,this.Javascript,this.Android,this.NodeJS,this.KNX,this.GitHub]}
-  informatique = {name:"Informatique",data:[this.Python, this.Javascript,this.Angular,this.GitHub, this.GitLab]}
+  informatique = { name: "Informatique", data: [this.Python, this.Javascript, this.Angular, this.GitHub, this.GitLab] }
 
-  skills = [this.telecom,this.network,this.informatique];
+  skills = [this.telecom, this.network, this.informatique];
 
 
 
   dark = true;
 
   private dataSubscription: Subscription;
+
+  myStyle: object = {};
+  myParams: object = {};
+  width: number = 100;
+  height: number = 100;
+
+  formation_indice: number;
+  showFormation: boolean;
+  dataFormation;
+
+  experience_indice: number;
+  showExperience: boolean;
+  dataExperience;
+
+  formationsData;
+  activeIndexFormation: number = 2;
+
+  experiencesData;
+  activeIndexExperience: number = 2;
+
+
 
   constructor(private serviceTheme: ThemeService) { }
 
@@ -142,10 +163,126 @@ export class HomeComponent implements OnInit {
       console.log(data);
       this.dark = data;
     });
+
+
+
+    this.myStyle = {
+      'position': 'absolute',
+      'width': '100%',
+      'height': '100%',
+      'z-index': 0,
+      'top': 0,
+      'left': 0,
+      'right': 0,
+      'bottom': 0,
+      'background-color': 'var(--main-bg-bio)',
+
+    };
+
+    this.myParams = {
+      particles: {
+        number: {
+          value: 20,
+        },
+        color: {
+          value: '#ffffff'
+        },
+        shape: {
+          type: 'triangle',
+        },
+      }
+    };
+
+    this.formationsData = [{
+      label: 'Baccalauréat Mention Bien Européenne',
+      command: (event: any) => {
+        this.activeIndexFormation = 0;
+        // this.messageService.add({severity:'info', summary:'First Step', detail: event.item.label});
+      }
+    },
+    {
+      label: 'Cycle Préparatoire : ESIR',
+      command: (event: any) => {
+        this.activeIndexFormation = 1;
+        // this.messageService.add({severity:'info', summary:'Seat Selection', detail: event.item.label});
+      }
+    },
+    {
+      label: 'École d\ingénieurs Télécommuniation et Réseaux : ESIR',
+      command: (event: any) => {
+        this.activeIndexFormation = 2;
+        // this.messageService.add({severity:'info', summary:'Pay with CC', detail: event.item.label});
+      }
+    }
+    ];
+
+    this.experiencesData = [
+      {
+        label: 'Stagiaire en télécom : Anritsu',
+        command: (event: any) => {
+          this.activeIndexExperience = 0;
+          // this.messageService.add({severity:'info', summary:'Pay with CC', detail: event.item.label});
+        }
+      },
+
+      {
+        label: 'Stagiaire en développement test : SmartViser',
+        command: (event: any) => {
+          this.activeIndexExperience = 1;
+          // this.messageService.add({severity:'info', summary:'Seat Selection', detail: event.item.label});
+        }
+      },
+      {
+        label: 'Développeur Full Stack Angular : Niji',
+        command: (event: any) => {
+          this.activeIndexExperience = 2;
+          // this.messageService.add({severity:'info', summary:'First Step', detail: event.item.label});
+        }
+      }
+    ];
+
+
   }
 
   ngOnDestroy() {
     this.dataSubscription.unsubscribe();
+  }
+
+
+  formation(i) {
+
+    console.log(i)
+
+    if ((this.formation_indice == i) && this.showFormation == true) {
+      this.showFormation = false;
+    }
+    else {
+      if (i == 0) {
+        this.showFormation = false;
+      } else {
+        this.showFormation = true;
+        this.formation_indice = i;
+        this.dataFormation = this.formations[this.formation_indice - 1];
+      }
+
+    }
+
+  }
+
+  experience(i) {
+
+    console.log(i)
+
+    if ((this.experience_indice == i) && this.showExperience == true) {
+      this.showExperience = false;
+    }
+    else {
+
+      this.showExperience = true;
+      this.experience_indice = i;
+      this.dataExperience = this.experiences[this.experience_indice];
+    }
+
   }
 
 }

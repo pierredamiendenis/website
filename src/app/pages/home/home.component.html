@@ -1,86 +1,216 @@
 <div class="main">
+    <particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height">
+
+    </particles>
+
     <div class="main-bio">
-        <div class="main-bio-name">Pierre-Damien DENIS</div>
         <img class="main-bio-photo" src="./../../../assets/img/avatar.jpg">
-        <div class="main-bio-title">Élève-ingénieur en Télécommunication & Réseaux</div>
-        <div class="main-bio-title">École Supérieure des Ingénieurs de Rennes</div>
-        <div  class="main-bio-search">
-            <div class="main-bio-search-title">Recherche contrat de professionnalisation</div>
-            <div class="main-bio-search-content">Antennes – Radars – Traitement du signal - Télécommunications – Réseaux Mobiles</div>
-        </div>
 
-        <div class="main-bio-contact">denis.pierredamien@gmail.com - 06.30.14.40.98</div>
+        <div class="main-bio-description">
 
 
-        <div class="main-bio-network">
-            <a href="https://github.com/pierredamiendenis" target="_blank"><img class="main-bio-network-logo"
-                    src="./../../../assets/img/github.svg"></a>
-            <a href="https://www.linkedin.com/in/pierre-damien-denis-109ab2121/" target="_blank"><img
-                    class="main-bio-network-logo" src="./../../../assets/img/linkedin.svg">
-            </a>
-            <a href="mailto:denis.pierredamien@gmail.com"><img class="main-bio-network-logo"
-                    src="./../../../assets/img/mail.svg">
-            </a>
+            <div class="main-bio-description-name">Pierre-Damien DENIS</div>
+            <div class="main-bio-description-title">📡 Élève-ingénieur en Télécommunication & Réseaux</div>
+            <div class="main-bio-description-title">🎓 École Supérieure des Ingénieurs de Rennes</div>
+            <div class="main-bio-description-search">
+                <div class="main-bio-description-search-title">Recherche stage 2021</div>
+                <div class="main-bio-description-search-content">Antennes – Radars – Traitement du signal -
+                    Télécommunications – Réseaux Mobiles</div>
+            </div>
+
+            <div class="main-bio-description-contact"><a style="font-style: normal;">📧</a>
+                denis.pierredamien@gmail.com - <a style="font-style: normal;">📱</a> 06.30.14.40.98</div>
+
+
+            <div class="main-bio-description-network">
+                <a href="https://github.com/pierredamiendenis" target="_blank"><img
+                        class="main-bio-description-network-logo" src="./../../../assets/img/github.svg"></a>
+                <a href="https://www.linkedin.com/in/pierre-damien-denis-109ab2121/" target="_blank"><img
+                        class="main-bio-description-network-logo" src="./../../../assets/img/linkedin.svg">
+                </a>
+                <a href="mailto:denis.pierredamien@gmail.com"><img class="main-bio-description-network-logo"
+                        src="./../../../assets/img/mail.svg">
+                </a>
+            </div>
+
         </div>
     </div>
+
     <div class="main-content">
-        <div class="main-content-experiences" id="experiences">
-            <div class="main-content-experiences-title">Expériences</div>
-            <div class="main-content-experiences-experience" *ngFor="let experience of experiences">
-                <img class="main-content-experiences-experience-logo" [src]="experience.photo" data-aos="fade-right"
-                    data-aos-offset="200">
-                <div class="main-content-experiences-experience-data" data-aos="fade-right" data-aos-offset="200">
-                    <div class="main-content-experiences-experience-data-job">{{experience.job}}</div>
-                    <div class="main-content-experiences-experience-data-entreprise">{{experience.name}}</div>
-                    <div class="main-content-experiences-experience-data-date">{{experience.date}}</div>
-                    <div class="main-content-experiences-experience-data-lieu">{{experience.place}}</div>
-                    <div class="main-content-experiences-experience-data-actions">
-                        <div *ngFor="let work of experience.works">
+
+
+        <div class="main-content-projects">
+
+
+            <div class="main-content-projects-title">
+                Mes projets
+            </div>
+
+
+            <div class="main-content-projects-title">
+                Mes formations <a style="font-style: italic;font-size: 16px;">(Cliquez sur les formations pour +
+                    d'informations)</a>
+            </div>
+
+            <p-steps [model]="formationsData" [(activeIndex)]="activeIndexFormation" [readonly]="false"
+                (activeIndexChange)="formation($event)"></p-steps>
+
+
+            <div *ngIf="showFormation==true" class="main-content-experienceskills-experiences-experience">
+                <img class="main-content-experienceskills-experiences-experience-logo" [src]="dataFormation.photo">
+                <div class="main-content-experienceskills-experiences-experience-data">
+                    <div class="main-content-experienceskills-experiences-experience-data-job">{{dataFormation.job}}
+                    </div>
+                    <div class="main-content-experienceskills-experiences-experience-data-entreprise">
+                        {{dataFormation.name}}</div>
+                    <div class="main-content-experienceskills-experiences-experience-data-date">{{dataFormation.date}}
+                    </div>
+                    <div class="main-content-experienceskills-experiences-experience-data-lieu">{{dataFormation.place}}
+                    </div>
+                    <div class="main-content-experienceskills-experiences-experience-data-actions">
+                        <div *ngFor="let work of dataFormation?.works">
                             {{work}}
                         </div>
                     </div>
                 </div>
-                <div class="main-content-experiences-experience-skills" data-aos="fade-left" data-aos-offset="200">
-                    <div class="main-content-experiences-experience-skills-title">
+                <div class="main-content-experienceskills-experiences-experience-skills">
+                    <div class="main-content-experienceskills-experiences-experience-skills-title">
                         Compétences
                     </div>
-                    <div class="main-content-experiences-experience-skills-skill">
-                        <img *ngFor="let skill of experience.skills" [matTooltip]="skill.name"
-                            class="main-content-experiences-experience-skills-skill-photo" [src]="skill.photo">
+                    <div class="main-content-experienceskills-experiences-experience-skills-skill">
+                        <img *ngFor="let skill of dataFormation?.skills" [matTooltip]="skill.name"
+                            class="main-content-experienceskills-experiences-experience-skills-skill-photo"
+                            [src]="skill?.photo">
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div id="formations" class="main-content-formations" data-aos="fade-right" data-aos-offset="200">
-            <div class="main-content-experiences-title">Formations</div>
-            <div class="main-content-experiences-experience" *ngFor="let formation of formations">
-                <img class="main-content-experiences-experience-logo" [src]="formation.photo" data-aos="fade-right"
-                    data-aos-offset="200">
-                <div class="main-content-experiences-experience-data" data-aos="fade-right" data-aos-offset="200">
-                    <div class="main-content-experiences-experience-data-job">{{formation.job}}</div>
-                    <div class="main-content-experiences-experience-data-entreprise">{{formation.name}}</div>
-                    <div class="main-content-experiences-experience-data-date">{{formation.date}}</div>
-                    <div class="main-content-experiences-experience-data-lieu">{{formation.place}}</div>
-                    <div class="main-content-experiences-experience-data-actions">
-                        <div *ngFor="let work of formation.works">
+            <div class="main-content-projects-title">
+                Mes expériences <a style="font-style: italic;font-size: 16px;">(Cliquez sur les expériences pour +
+                    d'informations)</a>
+            </div>
+
+            <p-steps [model]="experiencesData" [(activeIndex)]="activeIndexExperience" [readonly]="false"
+                (activeIndexChange)="experience($event)"></p-steps>
+
+            <div *ngIf="showExperience==true" class="main-content-experienceskills-experiences-experience">
+                <img class="main-content-experienceskills-experiences-experience-logo" [src]="dataExperience.photo">
+                <div class="main-content-experienceskills-experiences-experience-data">
+                    <div class="main-content-experienceskills-experiences-experience-data-job">{{dataExperience.job}}
+                    </div>
+                    <div class="main-content-experienceskills-experiences-experience-data-entreprise">
+                        {{dataExperience.name}}</div>
+                    <div class="main-content-experienceskills-experiences-experience-data-date">{{dataExperience.date}}
+                    </div>
+                    <div class="main-content-experienceskills-experiences-experience-data-lieu">{{dataExperience.place}}
+                    </div>
+                    <div class="main-content-experienceskills-experiences-experience-data-actions">
+                        <div *ngFor="let work of dataExperience?.works">
                             {{work}}
                         </div>
                     </div>
                 </div>
-                <div class="main-content-experiences-experience-skills" data-aos="fade-left" data-aos-offset="200">
-                    <div class="main-content-experiences-experience-skills-title">
+                <div class="main-content-experienceskills-experiences-experience-skills">
+                    <div class="main-content-experienceskills-experiences-experience-skills-title">
                         Compétences
                     </div>
-                    <div class="main-content-experiences-experience-skills-skill">
-                        <img *ngFor="let skill of formation.skills" [matTooltip]="skill.name"
-                            class="main-content-experiences-experience-skills-skill-photo" [src]="skill.photo">
+                    <div class="main-content-experienceskills-experiences-experience-skills-skill">
+                        <img *ngFor="let skill of dataExperience?.skills" [matTooltip]="skill.name"
+                            class="main-content-experienceskills-experiences-experience-skills-skill-photo"
+                            [src]="skill?.photo">
                     </div>
                 </div>
             </div>
 
+
+
         </div>
-        <div id="competences" class="main-content-competences">
+
+
+
+
+        <!-- <div class="main-content-experienceskills">
+
+
+            <div class="main-content-experienceskills-experiences" id="experiences">
+                <div class="main-content-experienceskills-experiences-title">Expériences</div>
+                <div class="main-content-experienceskills-experiences-experience"
+                    *ngFor="let experience of experiences">
+                    <img class="main-content-experienceskills-experiences-experience-logo" [src]="experience.photo"
+                        data-aos="fade-right" data-aos-offset="200">
+                    <div class="main-content-experienceskills-experiences-experience-data" data-aos="fade-right"
+                        data-aos-offset="200">
+                        <div class="main-content-experienceskills-experiences-experience-data-job">{{experience.job}}
+                        </div>
+                        <div class="main-content-experienceskills-experiences-experience-data-entreprise">
+                            {{experience.name}}</div>
+                        <div class="main-content-experienceskills-experiences-experience-data-date">{{experience.date}}
+                        </div>
+                        <div class="main-content-experienceskills-experiences-experience-data-lieu">{{experience.place}}
+                        </div>
+                        <div class="main-content-experienceskills-experiences-experience-data-actions">
+                            <div *ngFor="let work of experience.works">
+                                {{work}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-content-experienceskills-experiences-experience-skills" data-aos="fade-left"
+                        data-aos-offset="200">
+                        <div class="main-content-experienceskills-experiences-experience-skills-title">
+                            Compétences
+                        </div>
+                        <div class="main-content-experienceskills-experiences-experience-skills-skill">
+                            <img *ngFor="let skill of experience.skills" [matTooltip]="skill.name"
+                                class="main-content-experienceskills-experiences-experience-skills-skill-photo"
+                                [src]="skill.photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="formations" class="main-content-experienceskills-formations" data-aos="fade-right"
+                data-aos-offset="200">
+                <div class="main-content-experienceskills-experiences-title">Formations</div>
+                <div class="main-content-experienceskills-experiences-experience" *ngFor="let formation of formations">
+                    <img class="main-content-experienceskills-experiences-experience-logo" [src]="formation.photo"
+                        data-aos="fade-right" data-aos-offset="200">
+                    <div class="main-content-experienceskills-experiences-experience-data" data-aos="fade-right"
+                        data-aos-offset="200">
+                        <div class="main-content-experienceskills-experiences-experience-data-job">{{formation.job}}
+                        </div>
+                        <div class="main-content-experienceskills-experiences-experience-data-entreprise">
+                            {{formation.name}}</div>
+                        <div class="main-content-experienceskills-experiences-experience-data-date">{{formation.date}}
+                        </div>
+                        <div class="main-content-experienceskills-experiences-experience-data-lieu">{{formation.place}}
+                        </div>
+                        <div class="main-content-experienceskills-experiences-experience-data-actions">
+                            <div *ngFor="let work of formation.works">
+                                {{work}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-content-experienceskills-experiences-experience-skills" data-aos="fade-left"
+                        data-aos-offset="200">
+                        <div class="main-content-experienceskills-experiences-experience-skills-title">
+                            Compétences
+                        </div>
+                        <div class="main-content-experienceskills-experiences-experience-skills-skill">
+                            <img *ngFor="let skill of formation.skills" [matTooltip]="skill.name"
+                                class="main-content-experienceskills-experiences-experience-skills-skill-photo"
+                                [src]="skill.photo">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div> -->
+
+
+
+
+        <!-- <div id="competences" class="main-content-competences">
             <div class="main-content-competences-title" data-aos="fade-down" data-aos-offset="100">
                 Compétences
             </div>
@@ -95,6 +225,6 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
     </div>
 </div>

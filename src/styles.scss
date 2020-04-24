@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
   background-color: rgba(204, 204, 204, 0.381);
 }
 textarea:focus,
@@ -11,15 +11,14 @@ img:focus {
 }
 
 :root {
-  --main-bg-header: rgb(29, 73, 126);
-  --main-bg-bio: rgb(103, 121, 144);
+  --main-bg-header: rgb(20, 38, 59);
+  --main-bg-bio: rgb(20, 38, 59);
   --main-card-skills: rgb(255, 255, 255);
   --second-card-skills: rgb(29, 73, 126);
-  --text : black;
-  --title : black;
+  --text: black;
+  --title: black;
   --background: white;
-  --content : #FAFAFA;
-
+  --content: #fafafa;
 }
 
 /* width */
@@ -67,14 +66,77 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
 .dark {
   @include angular-material-theme($dark-theme);
-  --main-bg-header: rgb(27, 27, 27);
-  --main-bg-bio: rgb(46, 46, 46);
-  --main-card-skills: black;
-  --second-card-skills: #1C1C1C;
-  --text: white;
-  --title: white;
-  --background: black;
-  --content : #1C1C1C;
+  --main-bg-header: rgb(17, 17, 17);
+  --main-bg-bio: rgb(184, 70, 70);
+  --main-card-skills: rgb(255, 255, 255);
+  --second-card-skills: rgb(29, 73, 126);
+  --text: black;
+  --title: black;
+  --background: white;
+  --content: #fafafa;
 }
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-horizontal-content-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-label {
+  font-size: 18px;
+}
+
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: var(--main-bg-bio);
+}
+
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-icon {
+  width: 50px;
+  height: 50px;
+  margin-top: -13px;
+}
+
+.ui-steps .ui-steps-item {
+  width: 33%;
+}
+
+.ui-steps.steps-custom {
+  margin-bottom: 30px;
+}
+
+.ui-steps.steps-custom .ui-steps-item .ui-menuitem-link {
+  padding: 0 1em;
+  overflow: visible;
+}
+
+.ui-steps.steps-custom .ui-steps-item .ui-steps-number {
+  background-color: var(--main-bg-bio);
+  color: #ffffff;
+  display: inline-block;
+  width: 36px;
+  border-radius: 50%;
+  margin-top: -14px;
+  margin-bottom: 10px;
+}
+
+.ui-steps.steps-custom .ui-steps-item .ui-steps-title {
+  color: #555555;
+}
+
+.ui-steps .ui-steps-item.ui-state-highlight .ui-steps-number {
+  background: var(--main-bg-bio) !important;
+}
+
+.ui-steps .ui-steps-item .ui-menuitem-link:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.ui-steps .ui-steps-item .ui-menuitem-link {
+  cursor: pointer !important;
+}
+
+.ui-steps-item :hover {
+  background-color: rgb(235, 235, 235, 0.4) !important;
+}

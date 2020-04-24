@@ -4,65 +4,76 @@
   background-color: var(--background);
   width: calc(100vw - 10px);
   &-bio {
-    background-color: var(--main-bg-bio);
+    // background-color: var(--main-bg-bio);
     height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     padding: 20px;
-    &-name {
-      margin: 10px;
-      font-size: 20px;
-      color: white;
-    }
-    &-title {
-      font-size: 20px;
-      color: white;
-    }
-    &-contact {
-      font-size: 16px;
-      font-style: italic;
-      color: white;
-    }
+    height: 100vh;
+    flex-direction: row;
+
     &-photo {
       border-radius: 100%;
-      width: 150px;
-      border: solid 2px white;
+      width: 400px;
+      border: solid 20px white;
+      z-index: 1;
     }
-    &-network {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-      &-logo {
-        width: 30px;
-        height: 30px;
-        margin: 0 30px;
-      }
-      &-logo:hover {
-        fill: yellow;
-        cursor: pointer;
-      }
-    }
-    &-search {
-      color: white;
-      margin: 20px;
+
+    &-description {
+      margin-left: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      background-color: rgb(169, 73, 73);
-      padding: 10px;
-      border-radius: 10px;
-      border: solid 1px rgb(160, 49, 49);
+      z-index: 1;
+      &-name {
+        margin: 10px;
+        font-size: 40px;
+        color: white;
+      }
       &-title {
-        font-size: 24px;
+        font-size: 20px;
+        color: white;
       }
-      &-content {
-        font-size: 18px;
+      &-contact {
+        font-size: 16px;
+        font-style: italic;
+        color: white;
       }
-
+      &-network {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        &-logo {
+          width: 30px;
+          height: 30px;
+          margin: 0 30px;
+        }
+        &-logo:hover {
+          fill: yellow;
+          cursor: pointer;
+        }
+      }
+      &-search {
+        color: white;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(169, 73, 73);
+        padding: 10px;
+        border-radius: 10px;
+        border: solid 1px rgb(160, 49, 49);
+        &-title {
+          font-size: 24px;
+        }
+        &-content {
+          font-size: 18px;
+        }
+      }
     }
   }
   &-content {
@@ -71,93 +82,122 @@
     flex-direction: column;
     padding: 20px;
     margin: 20px 200px;
-    &-experiences {
-      box-shadow: 0px 0px 3px #555;
-      border-radius: 2px;
+    text-align: justify;
+
+    &-projects {
+
       padding: 20px;
-      background-color: var(--content);
-      display: flex;
-      flex-direction: column;
-      min-width: 375px;
+
       &-title {
+        font-size: 30px;
         font-weight: bold;
         margin-bottom: 20px;
-        font-size: 18px;
-        color: var(--title);
       }
-      &-experience {
+      &-title:last-of-type {
+        margin-top: 20px;
+      }
+    }
+
+    &-experienceskills {
+      display: flex;
+      justify-content: center;
+
+      &-experiences {
+        box-shadow: 0px 0px 3px #555;
+        border-radius: 2px;
+        padding: 20px;
+        background-color: var(--content);
         display: flex;
-        font-size: 14px;
-        padding-bottom: 30px;
-        margin-bottom: 30px;
-        border-bottom: solid 1px rgb(199, 199, 199);
-        &-logo {
-          width: 50px;
-          height: 50px;
-          margin-right: 40px;
+        flex-direction: column;
+        width: 800px;
+        margin: 20px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+
+        &-title {
+          font-weight: bold;
+          margin-bottom: 20px;
+          font-size: 18px;
+          color: var(--title);
         }
-        &-data {
-          flex: 5;
-          color: var(--text);
-          &-job {
-            font-weight: bold;
-          }
-          &-entreprise {
-          }
-          &-date {
-          }
-          &-actions {
-            margin-top: 10px;
-          }
-        }
-        &-skills {
-          flex: 3;
-          margin-left: 40px;
-          padding: 0 20px;
-          border-left: solid 1px rgb(199, 199, 199);
-          color: var(--text);
+        &-experience {
           display: flex;
-          flex-direction: column;
-          &-title {
-            display: flex;
-            justify-content: center;
-            font-weight: bold;
+          font-size: 14px;
+          padding-bottom: 30px;
+          margin-bottom: 30px;
+          box-shadow: 0px 0px 3px #555;
+          border-radius: 2px;
+          padding: 20px;
+          background-color: var(--content);
+          // border-bottom: solid 1px rgb(199, 199, 199);
+          &-logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 40px;
           }
-          &-skill {
+          &-data {
+            flex: 5;
+            color: var(--text);
+            margin-right: 20px;
+            &-job {
+              font-weight: bold;
+            }
+            &-entreprise {
+            }
+            &-date {
+            }
+            &-actions {
+              margin-top: 10px;
+            }
+          }
+          &-skills {
+            flex: 2;
+            padding: 0 10px;
+            border-left: solid 1px rgb(199, 199, 199);
+            color: var(--text);
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            flex-wrap: wrap;
-            margin-left: 20px;
-            &-photo {
-              width: 30px;
-              height: 30px;
-              margin: 10px 20px 10px 0px;
-              &-anritsu {
-                width: 60px;
-                height: 60px;
-                margin: 10px 40px 10px 0px;
+            &-title {
+              display: flex;
+              justify-content: center;
+              font-weight: bold;
+            }
+            &-skill {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+              &-photo {
+                width: 30px;
+                height: 30px;
+                margin: 10px;
+                &-anritsu {
+                  width: 60px;
+                  height: 60px;
+                  margin: 10px 40px 10px 0px;
+                }
               }
             }
-
           }
         }
+        &-experience:last-child {
+          border-bottom: none;
+          margin-bottom: 0;
+        }
       }
-      &-experience:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
+      &-formations {
+        box-shadow: 0px 0px 3px #555;
+        border-radius: 2px;
+        padding: 20px;
+        background-color: var(--content);
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+        margin: 20px;
+
       }
     }
-    &-formations {
-      margin-top: 30px;
-      box-shadow: 0px 0px 3px #555;
-      border-radius: 2px;
-      padding: 20px;
-      background-color: var(--content);
-      display: flex;
-      flex-direction: column;
-      min-width: 375px;
-    }
+
     &-competences {
       display: flex;
       flex-direction: column;
@@ -192,10 +232,9 @@
           justify-content: center;
           align-items: center;
           flex-wrap: wrap;
-
         }
       }
-
     }
   }
 }
+
