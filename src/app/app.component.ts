@@ -10,7 +10,7 @@ import { ThemeService } from './services/theme.service';
 export class AppComponent {
   title = 'website';
 
-  dark = true;
+  dark = false;
 
   private dataSubscription: Subscription;
 
@@ -18,7 +18,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.dataSubscription = this.serviceTheme.themeSubject.subscribe((data:any) => {
-      console.log(data);
+      console.log("darkmode",data);
       this.dark = data;
     });
   }

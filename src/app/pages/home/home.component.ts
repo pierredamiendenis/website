@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   CSS = { name: "CSS3/SCSS", photo: "./../../../assets/img/css.svg" };
   Javascript = { name: "Javascript", photo: "./../../../assets/img/logo_javascript.png" };
   GitHub = { name: "GitHub", photo: "./../../../assets/img/github-logo.svg" };
-  GitLab = { name: "GitLab", photo: "./../../../assets/img/gitlab_logo.svg" };
+  GitLab = { name: "GitLab", photo: "./../../../assets/img/GitLab_Logo.svg" };
   Mantis = { name: "Mantis", photo: "./../../../assets/img/mantis.png" };
   Redmine = { name: "Redmine", photo: "./../../../assets/img/redmine.png" };
   Python = { name: "Python", photo: "./../../../assets/img/python.svg" };
@@ -28,6 +28,12 @@ export class HomeComponent implements OnInit {
   NodeJS = { name: "NodeJS", photo: "./../../../assets/img/nodejs.svg" };
   Java = { name: "Java", photo: "./../../../assets/img/java.svg" };
   Scala = { name: "Scala", photo: "./../../../assets/img/scala.png" };
+  LTE = { name: "4G LTE", photo: "./../../../assets/img/lte.png" };
+  Ansys = { name: "Ansys / Ansoft Designer", photo: "./../../../assets/img/ansys.svg" };
+  GSM = { name: "3G GSM", photo: "./../../../assets/img/gsm.svg" };
+  MATLAB = { name: "MATLAB", photo: "./../../../assets/img/matlab.png" };
+  Cisco = { name: "Cisco", photo: "./../../../assets/img/cisco.svg" };
+
 
 
   Niji = {
@@ -76,32 +82,49 @@ export class HomeComponent implements OnInit {
     skills: [this.Scala,this.Java]
   }
 
-  IOT = {
-    name: "Etudiant ESIR",
-    photo: "./../../../assets/img/esir.png",
-    job: "Spécialité : IoT, sécurité et ville intelligente",
-    date: "2017 – 2019",
-    place: "Rennes",
-    works: ["- Projet de conception d'un drone de course FPV","- Projet de conception d'un objet connecté : SmartWater (arrosage connecté)","- Projet de conception de site en Angular : Pokédex","- Projet de conception d'une application de jeux en Android : GoSpace"],
-    skills: [this.Angular,this.HTML,this.CSS,this.Javascript,this.Android,this.NodeJS,this.KNX,this.GitHub]
-  }
+  // IOT = {
+  //   name: "Etudiant ESIR",
+  //   photo: "./../../../assets/img/esir.png",
+  //   job: "Spécialité : IoT, sécurité et ville intelligente",
+  //   date: "2017 – 2019",
+  //   place: "Rennes",
+  //   works: ["- Projet de conception d'un drone de course FPV","- Projet de conception d'un objet connecté : SmartWater (arrosage connecté)","- Projet de conception de site en Angular : Pokédex","- Projet de conception d'une application de jeux en Android : GoSpace"],
+  //   skills: [this.Angular,this.HTML,this.CSS,this.Javascript,this.Android,this.NodeJS,this.KNX,this.GitHub]
+  // }
 
   TR = {
     name: "Etudiant ESIR",
     photo: "./../../../assets/img/esir.png",
     job: "Télécom et Réseau",
-    date: "2019 - 2021",
+    date: "2018 - 2021",
     place: "Rennes",
-    works: [],
-    skills: [this.Wireshark,this.Python]
+    works: [
+      "📡 Télécommunications :",
+      "• Électronique HF (Abaque de Smith, Paramètres S, Antennes, Composants Actifs/Passifs, Intermodulation)",
+      "• Conception Circuit HF (Ansoft Designer)",
+      "• Techniques de modulation (OFDM, QAM, CDMA)",
+      "• Appareils de mesures : VNA, Analyseur de Spectre (Anritsu, Rohde et Schwarz, Keysight)",
+      "• Propagation (Espace Libre, Ellipsoïde de Fresnel, Canal)",
+      "• Traitement du signal",
+      "• Communication Numérique (IQ, Constellation)",
+      " -------------------- ",
+      "💻 Réseaux :",
+      "• Réseaux mobiles (2G, 3G, 4G)",
+      "• Sécurité (Cypto, SNMP, Radius, IPSec, Filtrage)",
+      "• Protocole de routage : MPLS, RIP, OSPF et BGP",
+      "• IPv6, SDN (MININET)"
+    ],
+    skills: [this.Shockline, this.Spectrum, this.VNA,this.LTE,this.GSM,this.Ansys,this.Python,this.MATLAB,this.Cisco,this.Wireshark]
   }
 
-  formations = [this.TR,this.IOT,this.Prepa,]
+  formations = [this.TR,this.Prepa,]
 
 
-  telecom = {name:"Télécommunications",data:[this.VNA,this.Spectrum,this.Shockline,this.Wireshark]};
-  network = {name:"Réseaux",data:[this.Wireshark,this.Python]};
-  informatique = {name:"Informatique",data:[this.Angular,this.HTML,this.CSS,this.Javascript,this.Android,this.NodeJS,this.KNX,this.GitHub]}
+  telecom = {name:"Télécommunications",data:[this.Shockline, this.Spectrum, this.VNA,this.LTE,this.GSM,this.Ansys,this.Python,this.MATLAB]};
+  network = {name:"Réseaux",data:[this.Wireshark,this.Python,this.Cisco]};
+  // informatique = {name:"Informatique",data:[this.Angular,this.HTML,this.CSS,this.Javascript,this.Android,this.NodeJS,this.KNX,this.GitHub]}
+  informatique = {name:"Informatique",data:[this.Python, this.Javascript,this.Angular,this.GitHub, this.GitLab]}
+
   skills = [this.telecom,this.network,this.informatique];
 
 

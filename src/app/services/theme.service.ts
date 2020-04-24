@@ -8,7 +8,7 @@ export class ThemeService {
 
   themeSubject = new Subject<any>();
 
-  dark = true;
+  dark = false;
 
   constructor() { this.emitAppareilSubject() }
 

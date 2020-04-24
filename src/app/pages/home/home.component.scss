@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: var(--background);
+  width: calc(100vw - 10px);
   &-bio {
     background-color: var(--main-bg-bio);
     height: fit-content;
