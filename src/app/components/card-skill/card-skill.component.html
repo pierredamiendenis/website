@@ -3,6 +3,17 @@
         <img [src]="url" class="main-logo-photo">
     </div>
     <div class="main-description">
-        {{description}}
+        <div class="main-description-title">
+            {{description}}
+            <a *ngIf="link==true" [href]="lien"  target="_blank">
+                <img class="main-description-link" src="./../../../assets/img/out.svg">
+            </a>
+        </div>
+        <div class="main-description-techno">
+            <div *ngFor="let t of technos">
+                <img class="main-description-techno-image" [src]="t">
+            </div>
+
+        </div>
     </div>
 </div>

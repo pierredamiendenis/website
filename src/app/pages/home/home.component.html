@@ -46,51 +46,179 @@
                 Mes projets
             </div>
 
+            <div id="competences" class="main-content-competences">
+                <div *ngFor="let skill of projectsTab" class="main-content-competences-skills" data-aos="fade-down"
+                    data-aos-offset="100">
+                    <div class="main-content-competences-skills-data">
+                        <app-card-skill *ngFor="let sk of skill.data" [url]="sk.photo" [description]="sk.name" [technos]="sk.technos" [link]="sk.link" [lien]="sk.lien">
+                        </app-card-skill>
+                    </div>
+                </div>
 
-            <div class="main-content-projects-title">
-                Mes formations <a style="font-style: italic;font-size: 16px;">(Cliquez sur les formations pour +
-                    d'informations)</a>
             </div>
 
-            <p-steps [model]="formationsData" [(activeIndex)]="activeIndexFormation" [readonly]="false"
-                (activeIndexChange)="formation($event)"></p-steps>
+
+            <div class="main-content-projects-title" data-aos="fade-down" data-aos-offset="100">
+                Mes formations
+            </div>
 
 
-            <div *ngIf="showFormation==true" class="main-content-experienceskills-experiences-experience">
-                <img class="main-content-experienceskills-experiences-experience-logo" [src]="dataFormation.photo">
-                <div class="main-content-experienceskills-experiences-experience-data">
-                    <div class="main-content-experienceskills-experiences-experience-data-job">{{dataFormation.job}}
-                    </div>
-                    <div class="main-content-experienceskills-experiences-experience-data-entreprise">
-                        {{dataFormation.name}}</div>
-                    <div class="main-content-experienceskills-experiences-experience-data-date">{{dataFormation.date}}
-                    </div>
-                    <div class="main-content-experienceskills-experiences-experience-data-lieu">{{dataFormation.place}}
-                    </div>
-                    <div class="main-content-experienceskills-experiences-experience-data-actions">
-                        <div *ngFor="let work of dataFormation?.works">
-                            {{work}}
+            <!-- The Timeline -->
+
+            <ul class="timeline" data-aos="fade-down" data-aos-offset="100">
+
+                <!-- Item 1 -->
+                <li>
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">ESIR</span>
+                            <span class="time-wrapper"><span class="time">2017 - 2021</span></span>
+                        </div>
+                        <div class="desc">
+                            Spécialité Télécommunications & Réseaux
+
+
+                            <div class="main-content-experienceskills-experiences-experience">
+                                <div class="main-content-experienceskills-experiences-experience-skills">
+                                    <div class="main-content-experienceskills-experiences-experience-skills-title">
+                                        Compétences
+                                    </div>
+                                    <div class="main-content-experienceskills-experiences-experience-skills-skill">
+                                        <img *ngFor="let skill of formations[1]?.skills" [matTooltip]="skill.name"
+                                            class="main-content-experienceskills-experiences-experience-skills-skill-photo"
+                                            [src]="skill?.photo">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="main-content-experienceskills-experiences-experience-skills">
-                    <div class="main-content-experienceskills-experiences-experience-skills-title">
-                        Compétences
+                </li>
+
+                <!-- Item 2 -->
+                <li>
+                    <div class="direction-l">
+                        <div class="flag-wrapper">
+                            <span class="flag">Cycle Prépatoire ESIR</span>
+                            <span class="time-wrapper"><span class="time">2015 - 2017</span></span>
+                        </div>
+                        <div class="desc">Cycle Préparatoire intégré à l'ESIR</div>
+
+                        <div class="main-content-experienceskills-experiences-experience">
+                            <div class="main-content-experienceskills-experiences-experience-skills">
+                                <div class="main-content-experienceskills-experiences-experience-skills-title">
+                                    Compétences
+                                </div>
+                                <div class="main-content-experienceskills-experiences-experience-skills-skill">
+                                    <img *ngFor="let skill of formations[0]?.skills" [matTooltip]="skill.name"
+                                        class="main-content-experienceskills-experiences-experience-skills-skill-photo"
+                                        [src]="skill?.photo">
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="main-content-experienceskills-experiences-experience-skills-skill">
-                        <img *ngFor="let skill of dataFormation?.skills" [matTooltip]="skill.name"
-                            class="main-content-experienceskills-experiences-experience-skills-skill-photo"
-                            [src]="skill?.photo">
+                </li>
+
+                <!-- Item 3 -->
+                <li>
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">Lycée René Descartes</span>
+                            <span class="time-wrapper"><span class="time">2012 - 2015</span></span>
+                        </div>
+                        <div class="desc">Baccalauréat S Mention Bien Européenne</div>
                     </div>
-                </div>
+                </li>
+
+            </ul>
+
+            <div class="main-content-projects-title" data-aos="fade-down" data-aos-offset="100">
+                Mes expériences
             </div>
 
-            <div class="main-content-projects-title">
-                Mes expériences <a style="font-style: italic;font-size: 16px;">(Cliquez sur les expériences pour +
-                    d'informations)</a>
-            </div>
+            <ul class="timeline" data-aos="fade-down" data-aos-offset="100">
 
-            <p-steps [model]="experiencesData" [(activeIndex)]="activeIndexExperience" [readonly]="false"
+                <!-- Item 1 -->
+                <li>
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">Niji</span>
+                            <span class="time-wrapper"><span class="time">Juin 2019 - Août 2019</span></span>
+                        </div>
+                        <div class="desc">
+                            Développeur Full Stack Angular
+
+                            <div class="main-content-experienceskills-experiences-experience">
+                                <div class="main-content-experienceskills-experiences-experience-skills">
+                                    <div class="main-content-experienceskills-experiences-experience-skills-title">
+                                        Compétences
+                                    </div>
+                                    <div class="main-content-experienceskills-experiences-experience-skills-skill">
+                                        <img *ngFor="let skill of experiences[2]?.skills" [matTooltip]="skill.name"
+                                            class="main-content-experienceskills-experiences-experience-skills-skill-photo"
+                                            [src]="skill?.photo">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Item 2 -->
+                <li>
+                    <div class="direction-l">
+                        <div class="flag-wrapper">
+                            <span class="flag">SmartViser</span>
+                            <span class="time-wrapper"><span class="time">Juin 2018 - Juillet 2018</span></span>
+                        </div>
+                        <div class="desc">Stagiaire en développement test
+                            <div class="main-content-experienceskills-experiences-experience">
+                                <div class="main-content-experienceskills-experiences-experience-skills">
+                                    <div class="main-content-experienceskills-experiences-experience-skills-title">
+                                        Compétences
+                                    </div>
+                                    <div class="main-content-experienceskills-experiences-experience-skills-skill">
+                                        <img *ngFor="let skill of experiences[1]?.skills" [matTooltip]="skill.name"
+                                            class="main-content-experienceskills-experiences-experience-skills-skill-photo"
+                                            [src]="skill?.photo">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Item 3 -->
+                <li>
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">Anritsu</span>
+                            <span class="time-wrapper"><span class="time">Juin 2016</span></span>
+                        </div>
+                        <div class="desc">Stagiaire en Télécommunication
+
+                            <div class="main-content-experienceskills-experiences-experience">
+                                <div class="main-content-experienceskills-experiences-experience-skills">
+                                    <div class="main-content-experienceskills-experiences-experience-skills-title">
+                                        Compétences
+                                    </div>
+                                    <div class="main-content-experienceskills-experiences-experience-skills-skill">
+                                        <img *ngFor="let skill of experiences[0]?.skills" [matTooltip]="skill.name"
+                                            class="main-content-experienceskills-experiences-experience-skills-skill-photo"
+                                            [src]="skill?.photo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+            <!-- <p-steps [model]="experiencesData" [(activeIndex)]="activeIndexExperience" [readonly]="false"
                 (activeIndexChange)="experience($event)"></p-steps>
 
             <div *ngIf="showExperience==true" class="main-content-experienceskills-experiences-experience">
@@ -120,7 +248,7 @@
                             [src]="skill?.photo">
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
 

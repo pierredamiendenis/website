@@ -19,6 +19,8 @@ img:focus {
   --title: black;
   --background: white;
   --content: #fafafa;
+  --main : rgb(20, 38, 59);
+  --main-transparent : rgb(20, 38, 59,0.1);
 }
 
 /* width */
@@ -74,6 +76,8 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   --title: black;
   --background: white;
   --content: #fafafa;
+  --main: rgb(184, 70, 70);
+
 }
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";

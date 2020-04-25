@@ -9,6 +9,10 @@ export class CardSkillComponent implements OnInit {
 
   @Input() url;
   @Input() description;
+  @Input() technos;
+  @Input() link;
+  @Input() lien;
+
 
   constructor() { }
 

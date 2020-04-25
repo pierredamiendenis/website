@@ -15,7 +15,6 @@ import {MatStepperModule} from '@angular/material/stepper';
 
 import {StepsModule} from 'primeng/steps';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
-import {MenuItem} from 'primeng/api';                  //api
 
 import {
   MatIconModule,

@@ -29,10 +29,10 @@ export class HomeComponent implements OnInit {
   Java = { name: "Java", photo: "./../../../assets/img/java.svg" };
   Scala = { name: "Scala", photo: "./../../../assets/img/scala.png" };
   LTE = { name: "4G LTE", photo: "./../../../assets/img/lte.png" };
-  Ansys = { name: "Ansys / Ansoft Designer", photo: "./../../../assets/img/ansys.svg" };
+  Ansys = { name: "Ansys / Ansoft Designer", photo: "./../../../assets/img/ansys.jpg" };
   GSM = { name: "3G GSM", photo: "./../../../assets/img/gsm.svg" };
   MATLAB = { name: "MATLAB", photo: "./../../../assets/img/matlab.png" };
-  Cisco = { name: "Cisco", photo: "./../../../assets/img/cisco.svg" };
+  Cisco = { name: "Cisco", photo: "./../../../assets/img/cisco.png" };
 
 
 
@@ -126,6 +126,18 @@ export class HomeComponent implements OnInit {
   informatique = { name: "Informatique", data: [this.Python, this.Javascript, this.Angular, this.GitHub, this.GitLab] }
 
   skills = [this.telecom, this.network, this.informatique];
+
+
+  RF1 = { name: "Mélangeur à 1.45GHz", photo: "./../../../assets/img/smith.png", technos:[this.Ansys.photo], link:false };
+
+  Covering = { name: "Couverture Radio", photo: "./../../../assets/img/covering.png", technos:[this.Python.photo] , link:true, lien:"https://coveringesirtr.netlify.app/"};
+  AppliAndroid = { name: "Application Android GoSpace", photo: "./../../../assets/img/gospace.png", technos:[this.Android.photo] , link:false};
+
+
+  projects = { name: "Projects", data: [this.RF1,this.Covering,this.AppliAndroid] };
+
+
+  projectsTab = [this.projects]
 
 
 
