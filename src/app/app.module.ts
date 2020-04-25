@@ -13,9 +13,6 @@ import { ParticlesModule } from 'angular-particle';
 
 import {MatStepperModule} from '@angular/material/stepper';
 
-import {StepsModule} from 'primeng/steps';
-import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
-
 import {
   MatIconModule,
 } from '@angular/material/icon';
@@ -39,9 +36,8 @@ import { CardSkillComponent } from './components/card-skill/card-skill.component
     MatTooltipModule,
     MatSlideToggleModule,
     ParticlesModule,
-    MatStepperModule,
-    StepsModule
-    ],
+    MatStepperModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
