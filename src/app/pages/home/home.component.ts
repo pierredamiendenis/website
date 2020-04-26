@@ -129,12 +129,14 @@ export class HomeComponent implements OnInit {
 
 
   RF1 = { name: "Mélangeur à 1.45GHz", photo: "./../../../assets/img/smith.png", technos:[this.Ansys.photo], link:false };
+  IQ = { name: "Modulateur/Démodulateur IQ", photo: "./../../../assets/img/IQ.png", technos:[this.Ansys.photo], link:false };
+
 
   Covering = { name: "Couverture Radio", photo: "./../../../assets/img/covering.png", technos:[this.Python.photo] , link:true, lien:"https://coveringesirtr.netlify.app/"};
   AppliAndroid = { name: "Application Android GoSpace", photo: "./../../../assets/img/gospace.png", technos:[this.Android.photo] , link:false};
 
 
-  projects = { name: "Projects", data: [this.RF1,this.Covering,this.AppliAndroid] };
+  projects = { name: "Projects", data: [this.RF1,this.Covering,this.IQ,this.AppliAndroid] };
 
 
   projectsTab = [this.projects]
