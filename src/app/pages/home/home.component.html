@@ -50,7 +50,8 @@
                 <div *ngFor="let skill of projectsTab" class="main-content-competences-skills" data-aos="fade-down"
                     data-aos-offset="100">
                     <div class="main-content-competences-skills-data">
-                        <app-card-skill *ngFor="let sk of skill.data" [url]="sk.photo" [description]="sk.name" [technos]="sk.technos" [link]="sk.link" [lien]="sk.lien">
+                        <app-card-skill *ngFor="let sk of skill.data" [url]="sk.photo" [description]="sk.name"
+                            [technos]="sk.technos" [link]="sk.link" [lien]="sk.lien">
                         </app-card-skill>
                     </div>
                 </div>
@@ -65,18 +66,44 @@
 
             <!-- The Timeline -->
 
-            <ul class="timeline" data-aos="fade-down" data-aos-offset="100">
+            <div class="main-content-projects">
+                <ul class="timeline" data-aos="fade-down" data-aos-offset="100">
 
-                <!-- Item 1 -->
-                <li>
-                    <div class="direction-r">
-                        <div class="flag-wrapper">
-                            <span class="flag">ESIR</span>
-                            <span class="time-wrapper"><span class="time">2017 - 2021</span></span>
+                    <!-- Item 1 -->
+                    <li>
+                        <div class="direction-r">
+                            <div class="flag-wrapper">
+                                <span class="flag">ESIR</span>
+                                <span class="time-wrapper"><span class="time">2017 - 2021</span></span>
+                            </div>
+                            <div class="desc">
+                                Spécialité Télécommunications & Réseaux
+
+
+                                <div class="main-content-experienceskills-experiences-experience">
+                                    <div class="main-content-experienceskills-experiences-experience-skills">
+                                        <div class="main-content-experienceskills-experiences-experience-skills-title">
+                                            Compétences
+                                        </div>
+                                        <div class="main-content-experienceskills-experiences-experience-skills-skill">
+                                            <img *ngFor="let skill of formations[1]?.skills" [matTooltip]="skill.name"
+                                                class="main-content-experienceskills-experiences-experience-skills-skill-photo"
+                                                [src]="skill?.photo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="desc">
-                            Spécialité Télécommunications & Réseaux
+                    </li>
 
+                    <!-- Item 2 -->
+                    <li>
+                        <div class="direction-l">
+                            <div class="flag-wrapper">
+                                <span class="flag">Cycle Prépatoire ESIR</span>
+                                <span class="time-wrapper"><span class="time">2015 - 2017</span></span>
+                            </div>
+                            <div class="desc">Cycle Préparatoire intégré à l'ESIR</div>
 
                             <div class="main-content-experienceskills-experiences-experience">
                                 <div class="main-content-experienceskills-experiences-experience-skills">
@@ -84,53 +111,32 @@
                                         Compétences
                                     </div>
                                     <div class="main-content-experienceskills-experiences-experience-skills-skill">
-                                        <img *ngFor="let skill of formations[1]?.skills" [matTooltip]="skill.name"
+                                        <img *ngFor="let skill of formations[0]?.skills" [matTooltip]="skill.name"
                                             class="main-content-experienceskills-experiences-experience-skills-skill-photo"
                                             [src]="skill?.photo">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </li>
 
-                <!-- Item 2 -->
-                <li>
-                    <div class="direction-l">
-                        <div class="flag-wrapper">
-                            <span class="flag">Cycle Prépatoire ESIR</span>
-                            <span class="time-wrapper"><span class="time">2015 - 2017</span></span>
                         </div>
-                        <div class="desc">Cycle Préparatoire intégré à l'ESIR</div>
+                    </li>
 
-                        <div class="main-content-experienceskills-experiences-experience">
-                            <div class="main-content-experienceskills-experiences-experience-skills">
-                                <div class="main-content-experienceskills-experiences-experience-skills-title">
-                                    Compétences
-                                </div>
-                                <div class="main-content-experienceskills-experiences-experience-skills-skill">
-                                    <img *ngFor="let skill of formations[0]?.skills" [matTooltip]="skill.name"
-                                        class="main-content-experienceskills-experiences-experience-skills-skill-photo"
-                                        [src]="skill?.photo">
-                                </div>
+                    <!-- Item 3 -->
+                    <li>
+                        <div class="direction-r">
+                            <div class="flag-wrapper">
+                                <span class="flag">Lycée René Descartes</span>
+                                <span class="time-wrapper"><span class="time">2012 - 2015</span></span>
                             </div>
+                            <div class="desc">Baccalauréat S Mention Bien Européenne</div>
                         </div>
+                    </li>
 
-                    </div>
-                </li>
+                </ul>
 
-                <!-- Item 3 -->
-                <li>
-                    <div class="direction-r">
-                        <div class="flag-wrapper">
-                            <span class="flag">Lycée René Descartes</span>
-                            <span class="time-wrapper"><span class="time">2012 - 2015</span></span>
-                        </div>
-                        <div class="desc">Baccalauréat S Mention Bien Européenne</div>
-                    </div>
-                </li>
+            </div>
 
-            </ul>
+
 
             <div class="main-content-projects-title" data-aos="fade-down" data-aos-offset="100">
                 Mes expériences
