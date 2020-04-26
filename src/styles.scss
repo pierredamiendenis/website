@@ -68,15 +68,15 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
 .dark {
   @include angular-material-theme($dark-theme);
-  --main-bg-header: rgb(17, 17, 17);
-  --main-bg-bio: rgb(184, 70, 70);
+  --main-bg-header: #3B143A;
+  --main-bg-bio: #3B143A;
   --main-card-skills: rgb(255, 255, 255);
   --second-card-skills: rgb(29, 73, 126);
   --text: black;
   --title: black;
   --background: white;
   --content: #fafafa;
-  --main: rgb(184, 70, 70);
+  --main: #3B143A;
 
 }
 
