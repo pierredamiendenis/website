@@ -1,22 +1,20 @@
 .main {
   display: flex;
   flex-direction: column;
-  background-color: var(--background);
-  width: calc(100vw - 20px);
+  // width: calc(100vw - 20px);
   &-bio {
     // background-color: var(--main-bg-bio);
     height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     height: 100vh;
     flex-direction: row;
 
     &-photo {
       border-radius: 100%;
       width: 400px;
-      border: solid 20px white;
+      border: solid 20px var(--second);
       z-index: 1;
     }
 
@@ -31,16 +29,16 @@
       &-name {
         margin: 10px;
         font-size: 40px;
-        color: white;
+        color: var(--text);
       }
       &-title {
         font-size: 20px;
-        color: white;
+        color: var(--text);
       }
       &-contact {
         font-size: 16px;
         font-style: italic;
-        color: white;
+        color: var(--text);
       }
       &-network {
         display: flex;
@@ -82,10 +80,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
-    // margin: 20px 300px;
     text-align: justify;
-    // width: 600px;
+    background-color: var(--second);
 
     &-projects {
 
@@ -95,6 +91,7 @@
         font-size: 30px;
         font-weight: bold;
         margin-bottom: 20px;
+        color: var(--title);
       }
       &-title:last-of-type {
         margin-top: 20px;
@@ -166,6 +163,7 @@
               display: flex;
               justify-content: center;
               font-weight: bold;
+              color: var(--main);
             }
             &-skill {
               display: flex;
@@ -229,7 +227,6 @@
         justify-content: center;
         align-items: center;
         &-title {
-          color: var(--title);
           border-bottom: solid 1px rgb(177, 177, 177);
         }
         &-data {
@@ -322,12 +319,15 @@
   -webkit-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
   -moz-box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
   box-shadow: -1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  color: var(--second);
 }
 
 .direction-r .flag {
   -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
   -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
   box-shadow: 1px 1px 1px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.15);
+  color: var(--second);
+
 }
 
 .direction-l .flag:before,
@@ -398,7 +398,8 @@
 .time {
   display: inline-block;
   padding: 4px 6px;
-  background: rgb(248,248,248);
+  background: var(--content);
+  color: var(--blue);
 }
 
 .desc {
@@ -407,6 +408,8 @@
   font-size: 15px;
   font-style: italic;
   line-height: 1.5em;
+  color: var(--title);
+
 }
 
 .direction-r .desc {
@@ -496,7 +499,7 @@
 	background: rgb(245,245,245);
 	-webkit-box-shadow: 0 0 1px rgba(0,0,0,0.20);
 	-moz-box-shadow: 0 0 1px rgba(0,0,0,0.20);
-	box-shadow: 0 0 1px rgba(0,0,0,0.20);
+  box-shadow: 0 0 1px rgba(0,0,0,0.20);
 	
   z-index: 15;
 }

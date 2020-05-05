@@ -15,12 +15,15 @@ img:focus {
   --main-bg-bio: rgb(20, 38, 59);
   --main-card-skills: rgb(255, 255, 255);
   --second-card-skills: rgb(29, 73, 126);
-  --text: black;
+  --text: white;
   --title: black;
   --background: white;
   --content: #fafafa;
   --main : rgb(20, 38, 59);
+  --second : white;
   --main-transparent : rgb(20, 38, 59,0.1);
+  --blue : rgb(20, 38, 59);
+
 }
 
 /* width */
@@ -68,15 +71,19 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
 .dark {
   @include angular-material-theme($dark-theme);
-  --main-bg-header: #3B143A;
-  --main-bg-bio: #3B143A;
-  --main-card-skills: rgb(255, 255, 255);
-  --second-card-skills: rgb(29, 73, 126);
-  --text: black;
-  --title: black;
+  --main-bg-header: rgb(20, 38, 59);
+  --main-bg-bio: white;
+  --main-card-skills: rgb(20, 38, 59);
+  --second-card-skills: white;
+  --text: rgb(20, 38, 59);
+  --title: white;
   --background: white;
   --content: #fafafa;
-  --main: #3B143A;
+  --main : white;
+  --second : rgb(20, 38, 59);
+  --main-transparent : rgb(20, 38, 59,0.1);
+  --blue : rgb(20, 38, 59);
+
 
 }
 
