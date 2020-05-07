@@ -143,12 +143,14 @@ export class HomeComponent implements OnInit {
 
 
 
-  dark = true;
+  dark = false;
 
   private dataSubscription: Subscription;
 
   myStyle: object = {};
   myParams: object = {};
+  myParamsDark: object = {};
+
   width: number = 100;
   height: number = 100;
 
@@ -203,6 +205,26 @@ export class HomeComponent implements OnInit {
         },
         shape: {
           type: 'triangle',
+        },
+        line_linked: {
+          color: "#FFFFFF"
+        },
+      }
+    };
+
+    this.myParamsDark = {
+      particles: {
+        number: {
+          value: 20,
+        },
+        color: {
+          value: '#14263B'
+        },
+        shape: {
+          type: 'triangle',
+        },
+        line_linked: {
+          color: "#14263B"
         },
       }
     };

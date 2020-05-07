@@ -1,5 +1,8 @@
 <div class="main">
-    <particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height">
+    <particles *ngIf="dark" [params]="myParamsDark" [style]="myStyle" [width]="width" [height]="height">
+
+    </particles>
+    <particles  *ngIf="!dark" [params]="myParams" [style]="myStyle" [width]="width" [height]="height">
 
     </particles>
 
