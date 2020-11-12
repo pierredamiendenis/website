@@ -13,12 +13,13 @@
 
     &-photo {
       border-radius: 100%;
-      width: 400px;
+      width: 20%;
       border: solid 20px var(--second);
       z-index: 1;
     }
 
     &-description {
+      font-size: 1.2vw;
       margin-left: 50px;
       display: flex;
       justify-content: center;
@@ -28,15 +29,12 @@
       text-align: center;
       &-name {
         margin: 10px;
-        font-size: 40px;
         color: var(--text);
       }
       &-title {
-        font-size: 20px;
         color: var(--text);
       }
       &-contact {
-        font-size: 16px;
         font-style: italic;
         color: var(--text);
       }
@@ -56,6 +54,7 @@
         }
       }
       &-search {
+        width: 70%;
         color: white;
         margin: 20px;
         display: flex;
